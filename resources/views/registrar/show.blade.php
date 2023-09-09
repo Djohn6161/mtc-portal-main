@@ -25,7 +25,7 @@
                                 <thead>
                                 	
                                     <tr>
-                                        <td><strong>LRN:</strong></strong> {{ $item->lrn }}</td>
+                                        <td><strong>LRN:</strong> {{ $item->lrn }}</td>
                                     </tr>
                                     <tr>
                                     	<td><strong>Email:</strong> {{ $item->email }}</td>

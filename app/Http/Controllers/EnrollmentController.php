@@ -6,6 +6,7 @@ use App\Models\Enrolled;
 use App\Models\Admission;
 use App\Models\Enrollment;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
 class EnrollmentController extends Controller
@@ -67,7 +68,7 @@ class EnrollmentController extends Controller
         // or, fetch data for editing using query builder
         $item = DB::table('enrollment')->where('id', $id)->first();
 
-        return view('/registrar/show', ['item' => $item]); //'show' in the code is the show.blade.php.
+        return view('/registrar/update_enrollment_table', ['item' => $item]); //'show' in the code is the show.blade.php.
     }
 
     public function view()
@@ -142,5 +143,22 @@ class EnrollmentController extends Controller
             "admission" => Admission::where("users_id", "=", $userid)->first()
         ]);
     }
+
+    //Edit the data
+public function update(Request $request, string $id): RedirectResponse
+{
+    $validatedData = $request->all();
+
+    $enrollment = Enrollment::find($id);
+
+    if (!$enrollment) {
+        return redirect()->back()->with('error', 'Enrollment not found.');
+    }
+
+    $enrollment->update($validatedData);
+
+    return redirect('/enrollment_table-table')->with('success', 'Enrollment data updated successfully.');
+}
+
 
 }

@@ -104,3 +104,10 @@ Route::post('/document_types', [DocumentTypeController::class, 'store'])->name('
 Route::get('/registrar', [DocumentTypeController::class, 'index']);
 Route::get('/academic_record_request_table-table', [DocumentTypeController::class, 'view']);
 Route::delete('/document_types/{id}', [DocumentTypeController::class, 'destroy'])->name('document_types.destroy');
+
+/*Route for updatind the student data in enrollment table*/
+Route::get('/enrollment{id}', [EnrollmentController::class, 'show'])
+    ->name('enrollment.show');
+
+Route::patch('/enrollment{id}', [EnrollmentController::class, 'update'])
+    ->name('enrollment.update');
