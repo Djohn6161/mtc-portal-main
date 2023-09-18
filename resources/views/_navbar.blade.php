@@ -8,7 +8,7 @@
            <div class="collapse navbar-collapse justify-content-center" id="navbarResponsive">
                <ul class="navbar-nav my-2 my-lg-0 d-fle align-items-center">
                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                   <li class="nav-item"><a class="nav-link" href="#">Academics</a></li>
+                   <li class="nav-item"><a class="nav-link" href="/academics">Academics</a></li>
                    <li class="nav-item"><a class="nav-link" href="/">
                            <x-logo />
                    </li>

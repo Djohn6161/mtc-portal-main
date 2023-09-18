@@ -33,6 +33,10 @@ Route::get('login', function () {
     return view('login');
 })->middleware('auth');
 
+Route::get('/academics', function() {
+    return redirect('/mtc-template/academics.html');
+});
+
 /*
 Route::get('student', function () {
     return view('students.index');
