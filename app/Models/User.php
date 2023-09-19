@@ -46,4 +46,10 @@ class User extends Authenticatable
     public function admissions(){
         return $this->hasOne(User::class, 'users_id');
     }
+    public function studentLoad(){
+        return $this->hasMany(SubjectLoad::class, 'students_id');
+    }
+    public function teacherLoad(){
+        return $this->hasMany(SubjectLoad::class, 'faculties_id');
+    }
 }
